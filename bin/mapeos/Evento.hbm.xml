@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Evento" table="evento">
+		<id column="idevento" name="idEvento">
+			<generator class="identity" />
+		</id>
+		
+		<property name="descripcion" column="descripcion" type="string" />
+		<property name="fechaHora" column="fechaHora" type="LocalDateTime" />
+		<many-to-one name="dispositivo" class="datos.Dispositivo" column="iddispositivo" not-null="true"/>
+		
+
+	</class>
+</hibernate-mapping>
